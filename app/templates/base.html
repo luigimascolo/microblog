@@ -1,0 +1,15 @@
+<-- base template that includes the navigation bar and a bit of title logic -->
+<html>
+	<head>
+		{% if title %}
+		<title>{{ title }} - microblog</title>
+		{% else %}
+		<title>Welcome to microblog - (default title)</title>
+		{% endif %}
+	</head>	
+	<body>
+		<div>Microblog: <a href="/index">Home</a></div>
+		<hr>
+		{% block content %}{% endblock %}
+	</body>
+</html>
