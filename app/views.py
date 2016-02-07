@@ -8,7 +8,7 @@ from .forms import LoginForm
 @app.route('/')
 @app.route('/index')
 def index():
-    user = {'nickname': 'Miguel'} # fake use# fake userr
+    user = {'nickname': 'Zaphod'} # fake user
     return render_template('index.html',
                            title='Home',
                            user=user)
@@ -28,4 +28,5 @@ def login():
     # If data are not validated or not inserted, return the login page
     return render_template('login.html',
                            title='Sign In',
-                           form=form)
+                           form=form,
+                           providers=app.config['OPENID_PROVIDERS'])
