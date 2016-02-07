@@ -1,0 +1,31 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Sign In</h1>
+	<form action="" method="post" name="login">
+		 <!--Implement the CSRF prevention, enabled in config.py-->
+		{{ form.hidden_tag() }}		
+		<p>
+			Please enter your OpenID:<br>
+			<!--The form fields are rendered by the field object. 
+			    Here we are asking the text field to generate 
+			    the openid field with a width of 80 characters
+			-->
+
+			{{ form.openid(size=80) }}<br>
+		</p>
+		<!--Implement a 'remember me' checkbox. Users can choose
+		    to have a cookie installed in their browsers that 
+		    remembers their login when they come back.
+		-->
+		<p>{{ form.remember_me }} Remember Me</p>
+		<!--The submit button has not been defined in the form class,
+		    as it does not carry any data. It is here defined as a 
+		   
+		     regular field.        
+		-->
+		<p><input type="submit" vcalue="Signi In"></p>
+	</form>
+{% endblock %}
+
